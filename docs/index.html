@@ -24,8 +24,6 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 .news-score {padding:8px 16px;border-radius:20px;color:white;font-weight:700;font-size:14px;}
 .news-meta {display:flex;gap:15px;margin-bottom:15px;font-size:14px;color:#718096;}
 .news-summary {color:#4a5568;line-height:1.6;margin-bottom:15px;}
-.news-tags {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px;}
-.tag {background:#edf2f7;color:#4a5568;padding:4px 12px;border-radius:12px;font-size:12px;}
 .news-scores {background:#f7fafc;border-radius:12px;padding:15px;margin-bottom:15px;}
 .scores-title {font-weight:600;color:#2d3748;margin-bottom:12px;}
 .score-item {display:grid;grid-template-columns:100px 1fr 30px;align-items:center;gap:10px;margin-bottom:8px;}
@@ -55,9 +53,9 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 <div class="date-selector"><label>日期:</label><select id="dateSelect" onchange="changeDate()"><option value="2026-04-10" selected>2026-04-10</option><option value="2026-04-09" >2026-04-09</option><option value="2026-04-08" >2026-04-08</option></select></div>
 </div>
 <div class="stats">
-<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">今日采集</div></div>
-<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">高分新闻</div></div>
-<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">中分新闻</div></div>
+<div class="stat-card"><div class="stat-value">24</div><div class="stat-label">今日采集</div></div>
+<div class="stat-card"><div class="stat-value">19</div><div class="stat-label">高分新闻</div></div>
+<div class="stat-card"><div class="stat-value">1</div><div class="stat-label">中分新闻</div></div>
 <div class="stat-card"><div class="stat-value">2026-04-10</div><div class="stat-label">采集日期</div></div>
 </div>
 </div>
@@ -70,613 +68,1189 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 <button class="filter-btn" onclick="filterNews('low')">低分</button>
 </div>
 
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#1</div>
-                <div class="news-title">工信部：2025年国家高新区上市企业数量较“十三五”末增长70%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">CyberAgent moves faster with ChatGPT Enterprise and Codex</div>
+                <div class="news-score" style="background: #10b981">76.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-09</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760417176191491" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">CyberAgent uses ChatGPT Enterprise and Codex to securely scale AI adoption, improve quality, and accelerate decisions across advertising, media, and gaming.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 500.0%"></div></div>
+                <span class="score-value">50.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/cyberagent" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#2</div>
-                <div class="news-title">印度央行强制银行平仓卢比空头头寸，银行面临数亿美元潜在亏损</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">The next phase of enterprise AI</div>
+                <div class="news-score" style="background: #10b981">74.08分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-08</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760401456382726" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">OpenAI outlines the next phase of enterprise AI, as adoption accelerates across industries with Frontier, ChatGPT Enterprise, Codex, and company-wide AI agents.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 500.0%"></div></div>
+                <span class="score-value">50.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 958.3%"></div></div>
+                <span class="score-value">95.83</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/next-phase-of-enterprise-ai" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#3</div>
-                <div class="news-title">蔚来ES9 开启预售，整车售价52.8万起</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">From games to biology and beyond: 10 years of AlphaGo’s impact</div>
+                <div class="news-score" style="background: #10b981">72.21分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760392327398151" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Ten years since AlphaGo, we explore how it is catalyzing scientific discovery and paving a path to AGI.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 770.8%"></div></div>
+                <span class="score-value">77.08</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/10-years-of-alphago/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#4</div>
-                <div class="news-title">沪深两市成交额突破1万亿</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Gemini 3.1 Flash Live: Making audio AI more natural and reliable</div>
+                <div class="news-score" style="background: #10b981">71.04分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760384243499527" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Our latest voice model has improved precision and lower latency to make voice interactions more fluid, natural and precise.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 854.2%"></div></div>
+                <span class="score-value">85.42</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#5</div>
-                <div class="news-title">将投产全新小型SUV？特斯拉中国：谣言</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Measuring progress toward AGI: A cognitive framework</div>
+                <div class="news-score" style="background: #10b981">70.92分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760376972116486" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">We’re introducing a framework to measure progress toward AGI, and launching a Kaggle hackathon to build the relevant evaluations.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 791.7%"></div></div>
+                <span class="score-value">79.17</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#6</div>
-                <div class="news-title">国家移民管理局：一季度全国共1.85亿人次出入境，同比上升13.5%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Enabling agent-first process redesign</div>
+                <div class="news-score" style="background: #10b981">70.29分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760370575114760" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Unlike static, rules-based systems, AI agents can learn, adapt, and optimize processes dynamically. As they interact with data, systems, people, and other agents in real time, AI agents can execute entire workflows autonomously. But unlocking their potential requires redesigning processes around agents rather than bolting them onto fragmented legacy workflows using traditional optimization methods. Companies&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 300.0%"></div></div>
+                <span class="score-value">30.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 729.2%"></div></div>
+                <span class="score-value">72.92</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/04/07/1134966/enabling-agent-first-process-redesign/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#7</div>
-                <div class="news-title">“章鱼动力”获得新加坡风投K3领投的数亿元投资</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">OpenAI Full Fan Mode Contest: Terms & Conditions</div>
+                <div class="news-score" style="background: #10b981">68.79分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-09</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760370031657476" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Explore the official terms and conditions for the OpenAI Full Fan Mode Contest, including eligibility, entry steps, judging criteria, and prize details. Learn how to participate, submit your entry on Instagram, and win IPL match tickets.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 979.2%"></div></div>
+                <span class="score-value">97.92</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/full-fan-mode-contest-terms-conditions" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#8</div>
-                <div class="news-title">OpenAI负责“星际之门”（Stargate）的高管Peter Hoeschele已离开公司</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Gemma 4: Byte for byte, the most capable open models</div>
+                <div class="news-score" style="background: #10b981">68.75分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760368626614786" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Gemma 4: Our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 875.0%"></div></div>
+                <span class="score-value">87.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#9</div>
-                <div class="news-title">快看漫画秘密研发AI娱乐产品，近期将以独立App上线</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Protecting people from harmful manipulation</div>
+                <div class="news-score" style="background: #10b981">66.83分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760367689745154" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Google DeepMind researches AI's harmful manipulation risks across areas like finance and health, leading to new safety measures.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 833.3%"></div></div>
+                <span class="score-value">83.33</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/protecting-people-from-harmful-manipulation/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#10</div>
-                <div class="news-title">创业板指涨逾3%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Introducing the Child Safety Blueprint</div>
+                <div class="news-score" style="background: #10b981">66.38分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-08</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760366255391495" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Discover OpenAI’s Child Safety Blueprint—a roadmap for building AI responsibly with safeguards, age-appropriate design, and collaboration to protect and empower young people online.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 937.5%"></div></div>
+                <span class="score-value">93.75</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/introducing-child-safety-blueprint" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#11</div>
-                <div class="news-title">A股三大股指均涨超1%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Lyria 3 Pro: Create longer tracks in more</div>
+                <div class="news-score" style="background: #10b981">65.62分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 deepmind-blog</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760362906583553" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Introducing Lyria 3 Pro, which unlocks longer tracks with structural awareness. We’re also bringing Lyria to more Google products and surfaces.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0.0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 812.5%"></div></div>
+                <span class="score-value">81.25</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#12</div>
-                <div class="news-title">联想集团收购高端存储公司infinidat</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Shifting to AI model customization is an architectural imperative</div>
+                <div class="news-score" style="background: #10b981">65.46分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760357866537729" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">In the early days of large language models (LLMs), we grew accustomed to massive 10x jumps in reasoning and coding capability with every new model iteration. Today, those jumps have flattened into incremental gains. The exception is domain-specialized intelligence, where true step-function improvements are still the norm. When a model is fused with an organization’s&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 300.0%"></div></div>
+                <span class="score-value">30.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 645.8%"></div></div>
+                <span class="score-value">64.58</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#13</div>
-                <div class="news-title">多模态大模型HappyHorse或由阿里团队研发</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">The one piece of data that could actually shed light on your job and AI</div>
+                <div class="news-score" style="background: #10b981">65.08分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760355006153474" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first,&#160;sign up here. Within Silicon Valley’s orbit, an AI-fueled jobs apocalypse is spoken about as a given. The mood is so grim that a societal impacts researcher at Anthropic, responding Wednesday to a call for&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 708.3%"></div></div>
+                <span class="score-value">70.83</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/04/06/1135187/the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#14</div>
-                <div class="news-title">港股恒生科技指数涨超2%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Industrial policy for the Intelligence Age</div>
+                <div class="news-score" style="background: #10b981">63.46分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-06</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760351812928264" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">Explore our ambitious, people-first industrial policy ideas for the AI era—focused on expanding opportunity, sharing prosperity, and building resilient institutions as advanced intelligence evolves.</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 895.8%"></div></div>
+                <span class="score-value">89.58</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/industrial-policy-for-the-intelligence-age" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#15</div>
-                <div class="news-title">沪指重回4000点</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Announcing the OpenAI Safety Fellowship</div>
+                <div class="news-score" style="background: #10b981">62.17分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 openai-news</span>
+                <span>🕐 2026-04-06</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760351281480196" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">A pilot program to support independent safety and alignment research and develop the next generation of talent</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 916.7%"></div></div>
+                <span class="score-value">91.67</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://openai.com/index/introducing-openai-safety-fellowship" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#16</div>
-                <div class="news-title">恒生科技指数上涨1%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why</div>
+                <div class="news-score" style="background: #10b981">61.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760338151981571" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time I began&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 750.0%"></div></div>
+                <span class="score-value">75.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#17</div>
-                <div class="news-title">国家统计局：2026年3月份，全国工业生产者出厂价格同比由上月下降0.9%转为上涨0.5%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">AI is changing how small online sellers decide what to make</div>
+                <div class="news-score" style="background: #10b981">60.88分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760336926261767" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">For years Mike McClary sold the Guardian LTE Flashlight, a heavy-duty black model, online through his small outdoor brand. The product, designed for brightness and durability, became one of his most popular items ever. Even after he stopped offering it around 2017, customers kept sending him emails asking where they could buy it.&#160; When McClary&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 687.5%"></div></div>
+                <span class="score-value">68.75</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/04/06/1135118/ai-online-seller-alibaba-accio/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#18</div>
-                <div class="news-title">国家统计局：2026年3月份，全国居民消费价格同比上涨1.0%。</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">The gig workers who are training humanoid robots at home</div>
+                <div class="news-score" style="background: #10b981">60.67分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 mit-tech-review</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760335656665601" target="_blank">查看原文 →</a></div>
+            <div class="news-summary">When Zeus, a medical student living in a hilltop city in central Nigeria, returns to his studio apartment from a long day at the hospital, he turns on his ring light, straps his iPhone to his forehead, and starts recording himself. He raises his hands in front of him like a sleepwalker and puts a&#8230;</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 666.7%"></div></div>
+                <span class="score-value">66.67</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="high">
             <div class="news-header">
                 <div class="news-rank">#19</div>
-                <div class="news-title">A股三大指数集体高开，半导体板块领涨</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Claude Code costs up to $200 a month. Goose does the same thing for free.</div>
+                <div class="news-score" style="background: #10b981">56.04分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-19</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760331172102657" target="_blank">查看原文 →</a></div>
+            <div class="news-summary"><p>The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive.</p><p><a href="https://claude.com/product/claude-code">Claude Code</a>, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its <a href="https://claude.com/pricing">pricing</a> — ranging from $20 to $200 per month depending on usage — has sparked a growing rebellion among the very programmers it aims</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600.0%"></div></div>
+                <span class="score-value">60.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 604.2%"></div></div>
+                <span class="score-value">60.42</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 1000%"></div></div>
+                <span class="score-value">100</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#20</div>
-                <div class="news-title">央行今日开展20亿元7天逆回购操作</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment</div>
+                <div class="news-score" style="background: #f59e0b">45.71分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36kr</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-08</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.36kr.com/newsflashes/3760327525548808" target="_blank">查看原文 →</a></div>
+            <div class="news-summary"><p><a href="https://nousresearch.com/">Nous Research</a>, the open-source artificial intelligence startup backed by crypto venture firm <a href="https://www.paradigm.xyz/">Paradigm</a>, released a new competitive programming model on Monday that it says matches or exceeds several larger proprietary systems — trained in just four days using 48 of Nvidia&#x27;s latest <a href="https://www.nvidia.com/en-us/data-center/dgx-b200/">B200 graphics processors</a>.</p><p>The model, called <a href="https:/</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 300.0%"></div></div>
+                <span class="score-value">30.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 520.8%"></div></div>
+                <span class="score-value">52.08</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#21</div>
-                <div class="news-title">物业大撤退背后的真相</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required</div>
+                <div class="news-score" style="background: #6b7280">44.42分</div>
             </div>
             <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-12</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849380.html" target="_blank">查看原文 →</a></div>
+            <div class="news-summary"><p><a href="https://www.anthropic.com/">Anthropic</a> released <a href="https://claude.com/blog/cowork-research-preview">Cowork</a> on Monday, a new AI agent capability that extends the power of its wildly successful <a href="https://claude.com/product/claude-code">Claude Code</a> tool to non-technical users — and according to company insiders, the team built the entire feature in approximately a week and a half, largely using Claude Code itself.</p><p>The launch marks a major inflection point i</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 300.0%"></div></div>
+                <span class="score-value">30.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 541.7%"></div></div>
+                <span class="score-value">54.17</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#22</div>
-                <div class="news-title">“AI灭世”，其实是Mythos和GPT-6的生意经</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Railway secures $100 million to challenge AWS with AI-native cloud infrastructure</div>
+                <div class="news-score" style="background: #6b7280">44.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-22</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849378.html" target="_blank">查看原文 →</a></div>
+            <div class="news-summary"><p><a href="https://railway.com/">Railway</a>, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging demand for artificial intelligence applications exposes the limitations of legacy cloud infrastructure.</p><p><a href="https://tq.vc/">TQ Ventures</a> led the round, with participation from <a href="https://fpvventures.com/">FPV Ventures</a></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 625.0%"></div></div>
+                <span class="score-value">62.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#23</div>
-                <div class="news-title">超5600家地方金融组织被清退，中国地方金融的野蛮扩张时代，正在真正结束</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI</div>
+                <div class="news-score" style="background: #6b7280">42.12分</div>
             </div>
             <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-13</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849376.html" target="_blank">查看原文 →</a></div>
+            <div class="news-summary"><p><a href="https://www.salesforce.com/">Salesforce</a> on Tuesday launched an entirely rebuilt version of <a href="https://slack.com/help/articles/202026038-An-introduction-to-Slackbot">Slackbot</a>, the company&#x27;s workplace assistant, transforming it from a simple notification tool into what executives describe as a fully powered AI agent capable of searching enterprise data, drafting documents, and taking action on behalf of employees.</p><p>The new Slackbot, now generally available to <a</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 200.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 800%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 562.5%"></div></div>
+                <span class="score-value">56.25</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#24</div>
-                <div class="news-title">SBTI说我废物，这是今年听过最舒服的一句话</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews</div>
+                <div class="news-score" style="background: #6b7280">41.33分</div>
             </div>
             <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+                <span>📍 venturebeat-ai</span>
+                <span>🕐 2026-01-16</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849373.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#25</div>
-                <div class="news-title">你好大佬，请问这是“正经”模拟么？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+            <div class="news-summary"><p>Alfred Wahlforss was running out of options. His startup, <a href="https://listenlabs.ai/">Listen Labs</a>, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s <a href="https://news.bloomberglaw.com/employee-benefits/zuckerbergs-100-million-ai-job-offers-pay-off-parmy-olson">$100 million offers</a> seemed impossible. So he spent $5,000 — a fifth of his marketing budget — on a <a href="https://billboardinsider.com/ai-startup/">billboard in San Francisco</a> displayi</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0</span>
             </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 700.0%"></div></div>
+                <span class="score-value">70.0</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849372.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#26</div>
-                <div class="news-title">谷歌CEO：我们每年花1800亿美元，内存比芯片更稀缺，2027年AI才真正渗透进企业</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">10.0</span>
             </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 900%"></div></div>
+                <span class="score-value">90</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849369.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#27</div>
-                <div class="news-title">当AI成为“狼来了”，没被替代，先被吓跑？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 583.3%"></div></div>
+                <span class="score-value">58.33</span>
             </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
             </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849128.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#28</div>
-                <div class="news-title">从风光的新茶饮“卖铲人”到被立案调查、濒临退市，“北交所果汁第一股”怎么把自己玩脱了？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849366.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#29</div>
-                <div class="news-title">量贩渠道营收占比超30%，增速却降至四年最低，盐津铺子的红利到顶了？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849365.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#30</div>
-                <div class="news-title">苦西刊版面费久矣，中国科研正在夺回话语权</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849362.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#31</div>
-                <div class="news-title">我那善于思考的前老板又又分享了</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849357.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#32</div>
-                <div class="news-title">迪拜积攒40年的繁华，崩塌只需要40天</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4848704.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#33</div>
-                <div class="news-title">SBTI突然爆火，全网都在求测：这是啥？SBTI，比MBTI更懂我的摆烂？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849352.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#34</div>
-                <div class="news-title">最有故事感的技术报告：Claude最强模型Mythos的7个精彩细节</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849338.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#35</div>
-                <div class="news-title">大摩惊人言论：AI最肥的肉，可能将不在英伟达手里</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849321.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#36</div>
-                <div class="news-title">撞脸的汽车设计，到底难堪了谁？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849347.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#37</div>
-                <div class="news-title">那些35岁之后的码农们都干啥去了</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849339.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#38</div>
-                <div class="news-title">Patagonia“翻车”给绿色溢价品牌敲响了哪些警钟？</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849337.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#39</div>
-                <div class="news-title">换她的头像就能“存款九位数”？我先信为敬</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4849336.html" target="_blank">查看原文 →</a></div>
-        </div>
-        <div class="news-card" data-score="low">
-            <div class="news-header">
-                <div class="news-rank">#40</div>
-                <div class="news-title">手机漏洞值百万？聊聊背后的生意</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
-            </div>
-            <div class="news-meta">
-                <span>📍 huxiu</span>
-                <span>🕐 </span>
-            </div>
-            <div class="news-summary"></div>
-            <div class="news-tags"></div>
-            <div class="news-scores"><div class="scores-title">📊 七维评分</div></div>
-            <div class="news-footer"><a href="https://www.huxiu.com/article/4848830.html" target="_blank">查看原文 →</a></div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 600%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai" target="_blank">查看原文 →</a></div>
         </div>
 </div>
 <div class="sidebar">
 <div class="sidebar-card">
 <h3 class="sidebar-title">📊 评分分布</h3>
-<div class="distribution-item"><span>🟢 高分 (≥55)</span><strong style="color:#10b981;">0</strong></div>
-<div class="distribution-item"><span>🟡 中分 (45-54)</span><strong style="color:#f59e0b;">0</strong></div>
-<div class="distribution-item"><span>⚪ 低分 (&lt;45)</span><strong style="color:#6b7280;">0</strong></div>
+<div class="distribution-item"><span>🟢 高分 (≥55)</span><strong style="color:#10b981;">19</strong></div>
+<div class="distribution-item"><span>🟡 中分 (45-54)</span><strong style="color:#f59e0b;">1</strong></div>
+<div class="distribution-item"><span>⚪ 低分 (&lt;45)</span><strong style="color:#6b7280;">4</strong></div>
 </div>
 <div class="sidebar-card">
 <h3 class="sidebar-title">📡 采集源状态</h3>
