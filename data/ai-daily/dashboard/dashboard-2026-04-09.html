@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 - 2026-04-09</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px;}
+.container {max-width:1400px;margin:0 auto;}
+.header {background:white;border-radius:16px;padding:30px;margin-bottom:20px;box-shadow:0 10px 40px rgba(0,0,0,0.1);}
+.header-top {display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.title {font-size:32px;font-weight:700;color:#1a202c;}
+.stats {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px;}
+.stat-card {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:20px;border-radius:12px;text-align:center;}
+.stat-value {font-size:36px;font-weight:700;margin-bottom:5px;}
+.main-content {display:grid;grid-template-columns:1fr 300px;gap:20px;}
+.news-section {display:flex;flex-direction:column;gap:20px;}
+.news-card {background:white;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s;}
+.news-card:hover {transform:translateY(-4px);}
+.news-header {display:flex;align-items:flex-start;gap:15px;margin-bottom:15px;}
+.news-rank {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.news-title {flex:1;font-size:20px;font-weight:600;color:#1a202c;}
+.news-score {padding:8px 16px;border-radius:20px;color:white;font-weight:700;font-size:14px;}
+.news-meta {display:flex;gap:15px;margin-bottom:15px;font-size:14px;color:#718096;}
+.news-summary {color:#4a5568;line-height:1.6;margin-bottom:15px;}
+.news-tags {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px;}
+.tag {background:#edf2f7;color:#4a5568;padding:4px 12px;border-radius:12px;font-size:12px;}
+.news-scores {background:#f7fafc;border-radius:12px;padding:15px;margin-bottom:15px;}
+.scores-title {font-weight:600;color:#2d3748;margin-bottom:12px;}
+.score-item {display:grid;grid-template-columns:100px 1fr 30px;align-items:center;gap:10px;margin-bottom:8px;}
+.score-bar {height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;}
+.score-fill {height:100%;background:linear-gradient(90deg,#667eea 0%,#764ba2 100%);border-radius:4px;}
+.score-value {font-weight:600;color:#667eea;text-align:right;}
+.news-footer {display:flex;justify-content:flex-end;}
+.news-link {color:#667eea;text-decoration:none;font-weight:600;}
+.sidebar {display:flex;flex-direction:column;gap:20px;}
+.sidebar-card {background:white;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.sidebar-title {font-size:18px;font-weight:700;color:#1a202c;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #e2e8f0;}
+.source-card {padding:12px;background:#f7fafc;border-radius:8px;margin-bottom:10px;}
+.source-name {font-weight:600;color:#2d3748;margin-bottom:5px;}
+.source-meta {font-size:12px;color:#718096;}
+.distribution-item {display:flex;justify-content:space-between;padding:10px;background:#f7fafc;border-radius:8px;margin-bottom:8px;}
+.filters {display:flex;gap:10px;margin-bottom:20px;}
+.filter-btn {padding:10px 20px;border:2px solid #e2e8f0;background:white;border-radius:8px;cursor:pointer;font-weight:600;}
+.filter-btn.active {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border-color:transparent;}
+@media (max-width:1024px) {.main-content{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="header-top">
+<h1 class="title">📡 AI 新闻日报</h1>
+<div class="date-selector"><label>日期:</label><select id="dateSelect" onchange="changeDate()"><option value="2026-04-09" selected>2026-04-09</option><option value="2026-04-08" >2026-04-08</option></select></div>
+</div>
+<div class="stats">
+<div class="stat-card"><div class="stat-value">7</div><div class="stat-label">今日采集</div></div>
+<div class="stat-card"><div class="stat-value">4</div><div class="stat-label">高分新闻</div></div>
+<div class="stat-card"><div class="stat-value">3</div><div class="stat-label">中分新闻</div></div>
+<div class="stat-card"><div class="stat-value">2026-04-09</div><div class="stat-label">采集日期</div></div>
+</div>
+</div>
+<div class="main-content">
+<div class="news-section">
+<div class="filters">
+<button class="filter-btn active" onclick="filterNews('all')">全部</button>
+<button class="filter-btn" onclick="filterNews('high')">高分</button>
+<button class="filter-btn" onclick="filterNews('medium')">中分</button>
+<button class="filter-btn" onclick="filterNews('low')">低分</button>
+</div>
+
+        <div class="news-card" data-score="high">
+            <div class="news-header">
+                <div class="news-rank">#1</div>
+                <div class="news-title">阿里巴巴AI大重组：李飞飞出任阿里云CTO，通义实验室升级为事业部</div>
+                <div class="news-score" style="background: #10b981">57分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 36氪</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">阿里巴巴集团CEO吴泳铭发布内部信，宣布AI相关组织调整：新设立集团技术委员会，升级通义大模型事业部，加速AI建设。李飞飞负责阿里云技术以及AI云基础设施建设，周靖人担任技术委员会首席AI架构师。</div>
+            <div class="news-tags"><span class="tag">阿里巴巴</span><span class="tag">李飞飞</span><span class="tag">AI组织架构</span><span class="tag">通义大模型</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div></div>
+            <div class="news-footer"><a href="https://36kr.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="high">
+            <div class="news-header">
+                <div class="news-rank">#2</div>
+                <div class="news-title">Meta发布首款超级智能实验室模型Muse Spark</div>
+                <div class="news-score" style="background: #10b981">55分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 爱范儿</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">Meta发布其超级智能实验室的首款模型Muse Spark，这是Meta时隔9个月后再次发布大模型。有声音指出该模型发布存在图表造假争议。</div>
+            <div class="news-tags"><span class="tag">Meta</span><span class="tag">Muse Spark</span><span class="tag">大模型</span><span class="tag">AI实验室</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.ifanr.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="high">
+            <div class="news-header">
+                <div class="news-rank">#3</div>
+                <div class="news-title">Perplexity Agent业务爆发，单月ARR暴增50%突破4.5亿美元</div>
+                <div class="news-score" style="background: #10b981">56分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 爱范儿</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">Perplexity的Agent业务实现爆发式增长，年度经常性收入(ARR)单月暴增50%，突破4.5亿美元大关，显示AI Agent市场的巨大潜力。</div>
+            <div class="news-tags"><span class="tag">Perplexity</span><span class="tag">AI Agent</span><span class="tag">ARR</span><span class="tag">商业化</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">6</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">10</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">6</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.ifanr.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="high">
+            <div class="news-header">
+                <div class="news-rank">#4</div>
+                <div class="news-title">Claude Cowork、OpenClaw与Google Antigravity：AI Agent时代来临</div>
+                <div class="news-score" style="background: #10b981">58分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 VentureBeat</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">VentureBeat深度分析三大AI Agent平台：Anthropic的Claude Cowork专注于法律和金融领域自动化；开源的OpenClaw已获得15万GitHub星标，可部署在本地机器上；Google的Antigravity是带有IDE的编码Agent。</div>
+            <div class="news-tags"><span class="tag">AI Agent</span><span class="tag">Claude</span><span class="tag">OpenClaw</span><span class="tag">Google Antigravity</span><span class="tag">AGI</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div></div>
+            <div class="news-footer"><a href="https://venturebeat.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="medium">
+            <div class="news-header">
+                <div class="news-rank">#5</div>
+                <div class="news-title">匿名模型快乐马HappyHorse-1.0屠榜AI视频榜单</div>
+                <div class="news-score" style="background: #f59e0b">54分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 爱范儿</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">一个名为快乐马(HappyHorse-1.0)的匿名模型在AI视频生成榜单上取得领先成绩，引发行业关注。该模型的开发者身份尚未公开。</div>
+            <div class="news-tags"><span class="tag">AI视频</span><span class="tag">HappyHorse</span><span class="tag">匿名模型</span><span class="tag">视频生成</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">6</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.ifanr.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="medium">
+            <div class="news-header">
+                <div class="news-rank">#6</div>
+                <div class="news-title">B站宣布推出播放页暂停广告功能，4月10日上线</div>
+                <div class="news-score" style="background: #f59e0b">46分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 36氪/爱范儿</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">B站宣布将于4月10日上线播放页暂停广告功能，用户暂停视频时将概率性触发广告展示。UP主可选择关闭该功能，但关闭后广告收益会相应减少。</div>
+            <div class="news-tags"><span class="tag">B站</span><span class="tag">广告</span><span class="tag">商业化</span><span class="tag">视频平台</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 30%"></div></div>
+                <span class="score-value">3</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">6</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 40%"></div></div>
+                <span class="score-value">4</span>
+            </div></div>
+            <div class="news-footer"><a href="https://36kr.com" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="medium">
+            <div class="news-header">
+                <div class="news-rank">#7</div>
+                <div class="news-title">字节成AI黄埔军校，核心人才流向Meta、苹果、OpenAI</div>
+                <div class="news-score" style="background: #f59e0b">49分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 爱范儿</span>
+                <span>🕐 2026-04-08</span>
+            </div>
+            <div class="news-summary">报道指出字节跳动已成为AI人才的重要输出地，其核心AI人才大量流向Meta、苹果、OpenAI等国际科技巨头，反映中国AI人才流动的新趋势。</div>
+            <div class="news-tags"><span class="tag">字节跳动</span><span class="tag">AI人才</span><span class="tag">Meta</span><span class="tag">OpenAI</span><span class="tag">人才流动</span></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">技术突破</span>
+                <div class="score-bar"><div class="score-fill" style="width: 40%"></div></div>
+                <span class="score-value">4</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">产业影响</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">商业价值</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">6</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">社会关注</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">9</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">时效性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">8</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">可信度</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">原创性</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">7</span>
+            </div></div>
+            <div class="news-footer"><a href="https://www.ifanr.com" target="_blank">查看原文 →</a></div>
+        </div>
+</div>
+<div class="sidebar">
+<div class="sidebar-card">
+<h3 class="sidebar-title">📊 评分分布</h3>
+<div class="distribution-item"><span>🟢 高分 (≥55)</span><strong style="color:#10b981;">4</strong></div>
+<div class="distribution-item"><span>🟡 中分 (45-54)</span><strong style="color:#f59e0b;">3</strong></div>
+<div class="distribution-item"><span>⚪ 低分 (&lt;45)</span><strong style="color:#6b7280;">0</strong></div>
+</div>
+<div class="sidebar-card">
+<h3 class="sidebar-title">📡 采集源状态</h3>
+
+            <div class="source-card">
+                <div class="source-name">OpenAI News</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">DeepMind Blog</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">Google AI Blog</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">MIT Technology Review AI</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">VentureBeat AI</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">Import AI</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">量子位</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">机器之心</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">36氪快讯</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">虎嗅</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 0 条</div>
+            </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function filterNews(score){
+const cards=document.querySelectorAll('.news-card');
+const btns=document.querySelectorAll('.filter-btn');
+btns.forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+cards.forEach(c=>{c.style.display=(score==='all'||c.dataset.score===score)?'block':'none';});
+}
+function changeDate(){
+const d=document.getElementById('dateSelect').value;
+window.location.href='?date='+d;
+}
+</script>
+</body>
+</html>
