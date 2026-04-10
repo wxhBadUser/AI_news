@@ -1,0 +1,187 @@
+{
+  "date": "2026-04-09",
+  "collected_at": "2026-04-09T09:03:28.024892+08:00",
+  "total_count": 7,
+  "sources": [
+    "36氪",
+    "爱范儿",
+    "VentureBeat"
+  ],
+  "score_distribution": {
+    "high": 4,
+    "medium": 3,
+    "low": 0
+  },
+  "news": [
+    {
+      "title": "阿里巴巴AI大重组：李飞飞出任阿里云CTO，通义实验室升级为事业部",
+      "source": "36氪",
+      "source_url": "https://36kr.com",
+      "publish_time": "2026-04-08T20:00:00+08:00",
+      "summary": "阿里巴巴集团CEO吴泳铭发布内部信，宣布AI相关组织调整：新设立集团技术委员会，升级通义大模型事业部，加速AI建设。李飞飞负责阿里云技术以及AI云基础设施建设，周靖人担任技术委员会首席AI架构师。",
+      "scores": {
+        "技术突破": 7,
+        "产业影响": 9,
+        "商业价值": 8,
+        "社会关注": 8,
+        "时效性": 9,
+        "可信度": 9,
+        "原创性": 7
+      },
+      "total_score": 57,
+      "category": "企业动态",
+      "tags": [
+        "阿里巴巴",
+        "李飞飞",
+        "AI组织架构",
+        "通义大模型"
+      ]
+    },
+    {
+      "title": "Meta发布首款超级智能实验室模型Muse Spark",
+      "source": "爱范儿",
+      "source_url": "https://www.ifanr.com",
+      "publish_time": "2026-04-08T08:21:00+08:00",
+      "summary": "Meta发布其超级智能实验室的首款模型Muse Spark，这是Meta时隔9个月后再次发布大模型。有声音指出该模型发布存在图表造假争议。",
+      "scores": {
+        "技术突破": 8,
+        "产业影响": 8,
+        "商业价值": 7,
+        "社会关注": 8,
+        "时效性": 9,
+        "可信度": 7,
+        "原创性": 8
+      },
+      "total_score": 55,
+      "category": "模型发布",
+      "tags": [
+        "Meta",
+        "Muse Spark",
+        "大模型",
+        "AI实验室"
+      ]
+    },
+    {
+      "title": "Perplexity Agent业务爆发，单月ARR暴增50%突破4.5亿美元",
+      "source": "爱范儿",
+      "source_url": "https://www.ifanr.com",
+      "publish_time": "2026-04-08T08:21:00+08:00",
+      "summary": "Perplexity的Agent业务实现爆发式增长，年度经常性收入(ARR)单月暴增50%，突破4.5亿美元大关，显示AI Agent市场的巨大潜力。",
+      "scores": {
+        "技术突破": 6,
+        "产业影响": 9,
+        "商业价值": 10,
+        "社会关注": 8,
+        "时效性": 9,
+        "可信度": 8,
+        "原创性": 6
+      },
+      "total_score": 56,
+      "category": "商业动态",
+      "tags": [
+        "Perplexity",
+        "AI Agent",
+        "ARR",
+        "商业化"
+      ]
+    },
+    {
+      "title": "Claude Cowork、OpenClaw与Google Antigravity：AI Agent时代来临",
+      "source": "VentureBeat",
+      "source_url": "https://venturebeat.com",
+      "publish_time": "2026-04-08T22:26:00+08:00",
+      "summary": "VentureBeat深度分析三大AI Agent平台：Anthropic的Claude Cowork专注于法律和金融领域自动化；开源的OpenClaw已获得15万GitHub星标，可部署在本地机器上；Google的Antigravity是带有IDE的编码Agent。",
+      "scores": {
+        "技术突破": 8,
+        "产业影响": 9,
+        "商业价值": 8,
+        "社会关注": 9,
+        "时效性": 8,
+        "可信度": 8,
+        "原创性": 8
+      },
+      "total_score": 58,
+      "category": "技术分析",
+      "tags": [
+        "AI Agent",
+        "Claude",
+        "OpenClaw",
+        "Google Antigravity",
+        "AGI"
+      ]
+    },
+    {
+      "title": "匿名模型快乐马HappyHorse-1.0屠榜AI视频榜单",
+      "source": "爱范儿",
+      "source_url": "https://www.ifanr.com",
+      "publish_time": "2026-04-08T08:21:00+08:00",
+      "summary": "一个名为快乐马(HappyHorse-1.0)的匿名模型在AI视频生成榜单上取得领先成绩，引发行业关注。该模型的开发者身份尚未公开。",
+      "scores": {
+        "技术突破": 8,
+        "产业影响": 7,
+        "商业价值": 6,
+        "社会关注": 8,
+        "时效性": 9,
+        "可信度": 7,
+        "原创性": 9
+      },
+      "total_score": 54,
+      "category": "模型发布",
+      "tags": [
+        "AI视频",
+        "HappyHorse",
+        "匿名模型",
+        "视频生成"
+      ]
+    },
+    {
+      "title": "B站宣布推出播放页暂停广告功能，4月10日上线",
+      "source": "36氪/爱范儿",
+      "source_url": "https://36kr.com",
+      "publish_time": "2026-04-08T15:00:00+08:00",
+      "summary": "B站宣布将于4月10日上线播放页暂停广告功能，用户暂停视频时将概率性触发广告展示。UP主可选择关闭该功能，但关闭后广告收益会相应减少。",
+      "scores": {
+        "技术突破": 3,
+        "产业影响": 6,
+        "商业价值": 7,
+        "社会关注": 8,
+        "时效性": 9,
+        "可信度": 9,
+        "原创性": 4
+      },
+      "total_score": 46,
+      "category": "产品动态",
+      "tags": [
+        "B站",
+        "广告",
+        "商业化",
+        "视频平台"
+      ]
+    },
+    {
+      "title": "字节成AI黄埔军校，核心人才流向Meta、苹果、OpenAI",
+      "source": "爱范儿",
+      "source_url": "https://www.ifanr.com",
+      "publish_time": "2026-04-08T08:21:00+08:00",
+      "summary": "报道指出字节跳动已成为AI人才的重要输出地，其核心AI人才大量流向Meta、苹果、OpenAI等国际科技巨头，反映中国AI人才流动的新趋势。",
+      "scores": {
+        "技术突破": 4,
+        "产业影响": 8,
+        "商业价值": 6,
+        "社会关注": 9,
+        "时效性": 8,
+        "可信度": 7,
+        "原创性": 7
+      },
+      "total_score": 49,
+      "category": "人才动态",
+      "tags": [
+        "字节跳动",
+        "AI人才",
+        "Meta",
+        "OpenAI",
+        "人才流动"
+      ]
+    }
+  ]
+}

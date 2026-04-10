@@ -1,0 +1,108 @@
+{
+  "sources": [
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "type": "rss",
+      "language": "en",
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "deepmind-blog",
+      "name": "DeepMind Blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "type": "rss",
+      "language": "en",
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "google-ai-blog",
+      "name": "Google AI Blog",
+      "url": "https://blog.google/technology/ai/rss/",
+      "type": "rss",
+      "language": "en",
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "mit-tech-review",
+      "name": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "type": "rss",
+      "language": "en",
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "id": "venturebeat-ai",
+      "name": "VentureBeat AI",
+      "url": "https://venturebeat.com/category/ai/feed/",
+      "type": "rss",
+      "language": "en",
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "id": "import-ai",
+      "name": "Import AI",
+      "url": "https://importai.substack.com/feed",
+      "type": "rss",
+      "language": "en",
+      "priority": 3,
+      "status": "active",
+      "note": "Substack RSS feed"
+    },
+    {
+      "id": "qbitai",
+      "name": "量子位",
+      "url": "https://rsshub.rssforever.com/qbitai/brief",
+      "type": "rss",
+      "language": "zh",
+      "priority": 1,
+      "status": "active",
+      "note": "使用 RSSHub 公共实例"
+    },
+    {
+      "id": "jiqizhixin",
+      "name": "机器之心",
+      "url": "https://rsshub.rssforever.com/jiqizhixin",
+      "type": "rss",
+      "language": "zh",
+      "priority": 1,
+      "status": "active",
+      "note": "使用 RSSHub 公共实例"
+    },
+    {
+      "id": "36kr",
+      "name": "36氪快讯",
+      "url": "https://rsshub.rssforever.com/36kr/newsflashes",
+      "type": "rss",
+      "language": "zh",
+      "priority": 2,
+      "status": "active",
+      "note": "使用 RSSHub 公共实例 - 快讯频道"
+    },
+    {
+      "id": "huxiu",
+      "name": "虎嗅",
+      "url": "https://rsshub.rssforever.com/huxiu/article",
+      "type": "rss",
+      "language": "zh",
+      "priority": 2,
+      "status": "active",
+      "note": "使用 RSSHub 公共实例"
+    }
+  ],
+  "schedule": {
+    "time": "08:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "settings": {
+    "maxItemsPerSource": 10,
+    "deduplicationEnabled": true,
+    "scoringEnabled": true
+  }
+}
