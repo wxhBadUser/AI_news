@@ -24,8 +24,6 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 .news-score {padding:8px 16px;border-radius:20px;color:white;font-weight:700;font-size:14px;}
 .news-meta {display:flex;gap:15px;margin-bottom:15px;font-size:14px;color:#718096;}
 .news-summary {color:#4a5568;line-height:1.6;margin-bottom:15px;}
-.news-tags {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px;}
-.tag {background:#edf2f7;color:#4a5568;padding:4px 12px;border-radius:12px;font-size:12px;}
 .news-scores {background:#f7fafc;border-radius:12px;padding:15px;margin-bottom:15px;}
 .scores-title {font-weight:600;color:#2d3748;margin-bottom:12px;}
 .score-item {display:grid;grid-template-columns:100px 1fr 30px;align-items:center;gap:10px;margin-bottom:8px;}
@@ -55,9 +53,9 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 <div class="date-selector"><label>日期:</label><select id="dateSelect" onchange="changeDate()"><option value="2026-04-10" selected>2026-04-10</option><option value="2026-04-09" >2026-04-09</option><option value="2026-04-08" >2026-04-08</option></select></div>
 </div>
 <div class="stats">
-<div class="stat-card"><div class="stat-value">17</div><div class="stat-label">今日采集</div></div>
-<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">高分新闻</div></div>
-<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">中分新闻</div></div>
+<div class="stat-card"><div class="stat-value">20</div><div class="stat-label">今日采集</div></div>
+<div class="stat-card"><div class="stat-value">60.98</div><div class="stat-label">平均评分</div></div>
+<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">高分新闻(≥80)</div></div>
 <div class="stat-card"><div class="stat-value">2026-04-10</div><div class="stat-label">采集日期</div></div>
 </div>
 </div>
@@ -70,948 +68,993 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
 <button class="filter-btn" onclick="filterNews('low')">低分</button>
 </div>
 
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#1</div>
-                <div class="news-title">OpenAI launches Codex plugin ecosystem for developers</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">MiniMax上线音乐生成模型Music 2.6</div>
+                <div class="news-score" style="background: #f59e0b">72.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 OpenAI Blog</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【OpenAI Blog】OpenAI推出Codex插件生态系统。New Codex plugin system allows developers to extend AI coding capabilities with </div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，4月10日，大模型公司MiniMax正式发布新一代音乐生成模型Music 2.6。本次更新从底层引擎到创作工具实现全维度进化，大幅提升生成延迟、音乐控制、声学品质，推出全新“Cover”创作功能和面向AI Agent生态的Music Skill，并面向全球创作者开启为期14天的免费内测。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 30.0%"></div></div>
+                <span class="score-value">30.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 82.5%"></div></div>
+                <span class="score-value">82.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
                 <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 84.3%"></div></div>
-                <span class="score-value">8.43</span>
+                <span class="score-value">100</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760667223147011" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#2</div>
-                <div class="news-title">Google Gemini API expands with new multimodal capabilities</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">《OpenClaw类智能体部署风险管理指南》正式发布</div>
+                <div class="news-score" style="background: #f59e0b">69.0分</div>
             </div>
             <div class="news-meta">
-                <span>📍 Google AI Blog</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【Google AI Blog】Google Gemini API扩展新多模态能力。Gemini API now supports enhanced multimodal processing with improved image and v</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，据人工智能产业发展联盟公众号消息，4月10日，中国人工智能产业发展联盟第十七次全会期间，中国人工智能产业发展联盟安全治理委员会正式发布《OpenClaw类智能体部署风险管理指南》。为系统性应对OpenClaw类智能体带来的安全挑战，指南聚焦企业在技术落地过程中的风险防控痛点，提出覆盖部署、使用、下线全过程的安全部署总体框架和自查规范，旨在推动智能体从“能部署”迈向“安全部署、规范使用、持续治理”，为企业规范开展技术部署提供务实指引。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 20.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90.0%"></div></div>
+                <span class="score-value">90.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
                 <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 84.3%"></div></div>
-                <span class="score-value">8.43</span>
+                <span class="score-value">100</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760689627349507" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#3</div>
-                <div class="news-title">DeepSeek V4拟4月上线，多模态能力实现重大突破</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">小马智行发布PonyWorld世界模型2.0</div>
+                <div class="news-score" style="background: #f59e0b">67.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 机器之心</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【机器之心】DeepSeek V4拟4月上线，多模态能力实现重大突破。DeepSeek V4将于2026年4月正式发布，在长期记忆、工程级编程、原生多模态融合及AI搜索四大维度实现跃迁。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，4月10日，小马智行正式发布其在物理AI领域的最新技术成果——PonyWorld世界模型2.0。与1.0相比，2.0最本质的变化在于世界模型具备了自我诊断与定向进化的能力。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 10.0%"></div></div>
+                <span class="score-value">10.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 85.0%"></div></div>
+                <span class="score-value">85.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
                 <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 82.89999999999999%"></div></div>
-                <span class="score-value">8.29</span>
+                <span class="score-value">100</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760675434054152" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#4</div>
-                <div class="news-title">Claude Code更新引热议：思考深度下降67%</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">微信3月更新9项功能，微信、企微支持连接自己的龙虾</div>
+                <div class="news-score" style="background: #f59e0b">66.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 量子位</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【量子位】Claude Code更新引热议：思考深度下降67%。Claude Code最新更新后，社区热议其思考深度下降67%，已无法胜任复杂工程任务。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，4月10日，据微信公开课消息，微信3月更新9项功能：微信公众号可发起“话题”；视频号带货短视频发布条数增加，支持挂载“商品合集”；视频号小游戏优质作者激励计划启动；微信、企微支持连接自己的龙虾；面对面可跨设备传照片/文件；压缩包可直接“预览”；首尔地铁能用微信支付购票；微信小店商品标签上新；微信小店推出新商家六大权益。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100.0%"></div></div>
+                <span class="score-value">100.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
                 <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
-                <span class="score-value">8.0</span>
+                <span class="score-value">100</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760688649159175" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#5</div>
-                <div class="news-title">Google releases Gemma 4 open-source model optimized for advanced reasoning</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">包钢股份：拟调整2026年二季度稀土精矿关联交易价格</div>
+                <div class="news-score" style="background: #f59e0b">64.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 Google AI Blog</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【Google AI Blog】Google发布Gemma 4开源模型，优化高级推理能力。Gemma 4 is designed for advanced reasoning tasks, optimized in collaboration wit</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，包钢股份公告，根据2022年年度股东大会审议通过的稀土精矿价格调整机制及计算公式，公司拟将2026年第二季度稀土精矿关联交易价格调整为不含税38,804元/吨（干量，REO=50%），REO每增减1%、不含税价格增减766.08元。双方约定每季度首月上旬调整价格并重新签订供应合同或补充协议。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 97.5%"></div></div>
+                <span class="score-value">97.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 78.60000000000001%"></div></div>
-                <span class="score-value">7.86</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760696086921728" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#6</div>
-                <div class="news-title">Meta releases Muse Spark, first model from superintelligence team</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">豫园股份：预计2026年第一季度净利润同比增长208.72%</div>
+                <div class="news-score" style="background: #f59e0b">64.0分</div>
             </div>
             <div class="news-meta">
-                <span>📍 VentureBeat</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【VentureBeat】Meta发布Muse Spark，超智能团队首款模型。Meta's new AI model Muse Spark is the first product from its $14.3B superintelli</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，豫园股份公告，预计2026年第一季度净利润为1.6亿元左右，与上年同期的5182.74万元相比增加1.08亿元左右，同比增长208.72%。报告期内公司在产业运营上积极推动业务转型创新，加速优化产品结构和渠道质量，经营效率和盈利水平较同期有较高的提升。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 95.0%"></div></div>
+                <span class="score-value">95.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 77.1%"></div></div>
-                <span class="score-value">7.71</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760694502785545" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#7</div>
-                <div class="news-title">Ilya曝光70页OpenAI绝密文件</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">保时捷一季度全球交付量同比下降15%，中国销量下降21%</div>
+                <div class="news-score" style="background: #f59e0b">63.75分</div>
             </div>
             <div class="news-meta">
-                <span>📍 机器之心</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【机器之心】Ilya曝光70页OpenAI绝密文件。前OpenAI首席科学家Ilya Sutskever曝光70页内部证据，指控Sam Altman撒谎成性。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">保时捷周五公布的2026年第一季度交付量进一步下滑，其中中国和美国等主要市场的交付量大幅下降，整体市场表现黯淡。这家德国跑车制造商报告称，其第一季度全球交付量为60991辆，同比下降15%。保时捷表示，由于来自本土品牌在价格和技术方面的激烈竞争，其中国市场交付量下降了21%。（新浪财经）</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 92.5%"></div></div>
+                <span class="score-value">92.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 77.1%"></div></div>
-                <span class="score-value">7.71</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760686045233665" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#8</div>
-                <div class="news-title">OpenAI announces GPT-5.4 with advanced computer control capabilities</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">和硕3月营收同比下降0.79％</div>
+                <div class="news-score" style="background: #f59e0b">63.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 OpenAI Blog</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【OpenAI Blog】OpenAI发布GPT-5.4，具备高级计算机控制能力。GPT-5.4 can directly operate computers and execute complex workflows across appl</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">和硕4月10日公布3月业绩，营收839.6亿元新台币，同比下降0.79％，累计销售额2441.1亿元新台币。（界面）</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 87.5%"></div></div>
+                <span class="score-value">87.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 75.7%"></div></div>
-                <span class="score-value">7.57</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760683863671553" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#9</div>
-                <div class="news-title">华为发布昇腾910C芯片，算力提升3倍</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">A股三大指数集体收涨，沪深京三市约4000股飘红</div>
+                <div class="news-score" style="background: #f59e0b">62.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 雷锋网</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【雷锋网】华为发布昇腾910C芯片，算力提升3倍。华为新一代AI芯片昇腾910C正式发布，算力较前代提升3倍，已在国内数据中心批量部署。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">36氪获悉，A股三大指数集体收涨，沪指涨0.51%，深成指涨2.24%，创业板指涨3.78%；锂电产业链集体走强，国轩高科、石大胜华涨停，欣旺达涨超14%；券商股大涨，南华期货涨停，中信证券涨超7%；海运、贵金属走弱，招金黄金跌近9%，中远海能跌超5%；沪深京三市约4000股飘红。</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
+                <span class="score-value">90</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
                 <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 72.9%"></div></div>
-                <span class="score-value">7.29</span>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760660807435013" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#10</div>
-                <div class="news-title">Anthropic opens Mythos model testing to Apple and Amazon for security research</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">OpenAI老股滞销了</div>
+                <div class="news-score" style="background: #f59e0b">61.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 VentureBeat</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【VentureBeat】Anthropic向苹果亚马逊开放Mythos模型安全测试。Anthropic's Project Glasswing allows tech giants to test the unreleased Mythos m</div>
-            <div class="news-tags"></div>
+            <div class="news-summary"></div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 20.0%"></div></div>
+                <span class="score-value">20.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65%"></div></div>
+                <span class="score-value">65</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 72.5%"></div></div>
+                <span class="score-value">72.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 71.39999999999999%"></div></div>
-                <span class="score-value">7.14</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849444.html" target="_blank">查看原文 →</a></div>
         </div>
-        <div class="news-card" data-score="low">
+        <div class="news-card" data-score="medium">
             <div class="news-header">
                 <div class="news-rank">#11</div>
-                <div class="news-title">北大团队改造DeepSeek注意力机制，速度快四倍</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">毛利率下滑，客户高度集中，天秦装备回应</div>
+                <div class="news-score" style="background: #f59e0b">60.75分</div>
             </div>
             <div class="news-meta">
-                <span>📍 量子位</span>
-                <span>🕐 </span>
+                <span>📍 36kr</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【量子位】北大团队改造DeepSeek注意力机制，速度快四倍。北京大学团队优化DeepSeek注意力机制，实现四倍速度提升且不损失精度。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">天秦装备披露2025年年报。报告期内，公司前五名客户合计销售金额约为2.19亿元，前五名客户合计销售金额占年度销售总额比例为94.41%，客户高度集中，引发广泛关注。此外，报告期内，公司毛利率降至34.97%。最近3年，公司毛利率分别约为38%、35.39%、34.97%。对此，天秦装备证券部工作人员回应，毛利率下滑主要由于产品结构发生了改变。公司前五大客户销售占比高是由于把一些主要客户的关联公司也合并计算。（中证报）</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80.0%"></div></div>
+                <span class="score-value">80.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 77.5%"></div></div>
+                <span class="score-value">77.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 71.39999999999999%"></div></div>
-                <span class="score-value">7.14</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.36kr.com/newsflashes/3760648864842500" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#12</div>
-                <div class="news-title">AI token economy explodes: China's daily token usage exceeds 140 trillion</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">2026年中国零供关系趋势洞察</div>
+                <div class="news-score" style="background: #6b7280">58.0分</div>
             </div>
             <div class="news-meta">
-                <span>📍 MIT Technology Review</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【MIT Technology Review】AI Token经济爆发：中国日Token用量超140万亿。Token-based pricing models become standard. China's daily AI token usage reaches</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">为身处变革浪潮中的零售商与供应商，提供行动参考</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
+                <span class="score-value">80</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65.0%"></div></div>
+                <span class="score-value">65.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
-                <span class="score-value">7.0</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849398.html" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#13</div>
-                <div class="news-title">阿里千问3.6-Plus登顶全球大模型调用周榜冠军</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">一口气揭秘《清明上河图》</div>
+                <div class="news-score" style="background: #6b7280">57.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36氪</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【36氪】阿里千问3.6-Plus登顶全球大模型调用周榜冠军。阿里Qwen3.6-Plus在权威大模型盲测榜单中登顶，成为中国最强编程模型，性能直逼Claude。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">这哪是画家，分明是预言家</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                <span class="score-value">9</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">70</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 75.0%"></div></div>
+                <span class="score-value">75.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
-                <span class="score-value">7.0</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849191.html" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#14</div>
-                <div class="news-title">中国AI大模型实现批量上车</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">黄金原油都疯了，中东这仗正在收割全球钱包，四月该怎么办？</div>
+                <div class="news-score" style="background: #6b7280">57.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 36氪</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【36氪】中国AI大模型实现批量上车。我国智能网联汽车关键技术取得突破，人工智能大模型已实现批量上车应用。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary">一根油价管道全连到咱们的钱包上</div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 75%"></div></div>
+                <span class="score-value">75</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 67.5%"></div></div>
+                <span class="score-value">67.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 80%"></div></div>
-                <span class="score-value">8</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 68.60000000000001%"></div></div>
-                <span class="score-value">6.86</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4848378.html" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#15</div>
-                <div class="news-title">The race to build AI that can reason like humans</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">芯片分销新骗局，小心长期不用的企业QQ...</div>
+                <div class="news-score" style="background: #6b7280">56.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 MIT Technology Review</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【MIT Technology Review】构建人类级推理AI的竞赛。Major AI labs are competing to develop reasoning capabilities that match human c</div>
-            <div class="news-tags"></div>
+            <div class="news-summary"></div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65%"></div></div>
+                <span class="score-value">65</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 67.1%"></div></div>
-                <span class="score-value">6.71</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849442.html" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#16</div>
-                <div class="news-title">DeepMind AlphaFold 3 expands to predict drug interactions</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">亚洲游客抛弃中东，扎堆邮轮与短途游</div>
+                <div class="news-score" style="background: #6b7280">55.5分</div>
             </div>
             <div class="news-meta">
-                <span>📍 DeepMind Blog</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【DeepMind Blog】DeepMind AlphaFold 3扩展预测药物相互作用能力。AlphaFold 3 now predicts drug-drug interactions and protein-ligand binding with </div>
-            <div class="news-tags"></div>
+            <div class="news-summary"></div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
-                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
-                <span class="score-value">7</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65%"></div></div>
+                <span class="score-value">65</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 62.5%"></div></div>
+                <span class="score-value">62.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
                 <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 61.4%"></div></div>
-                <span class="score-value">6.14</span>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849434.html" target="_blank">查看原文 →</a></div>
         </div>
         <div class="news-card" data-score="low">
             <div class="news-header">
                 <div class="news-rank">#17</div>
-                <div class="news-title">2026年中国人工智能市场总规模预计将超264.4亿美元</div>
-                <div class="news-score" style="background: #6b7280">0分</div>
+                <div class="news-title">宝藏影帝演的PUA大神，观众一边害怕一边上头</div>
+                <div class="news-score" style="background: #6b7280">55.25分</div>
             </div>
             <div class="news-meta">
-                <span>📍 PingWest</span>
-                <span>🕐 </span>
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
             </div>
-            <div class="news-summary">【PingWest】2026年中国人工智能市场总规模预计将超264.4亿美元。据IDC资讯报告显示，中国人工智能市场支出规模预计将在2026年增至264.4亿美元。</div>
-            <div class="news-tags"></div>
+            <div class="news-summary"></div>
             <div class="news-scores"><div class="scores-title">📊 七维评分</div>
             <div class="score-item">
                 <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65%"></div></div>
+                <span class="score-value">65</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60.0%"></div></div>
+                <span class="score-value">60.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
                 <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
+                <span class="score-value">60</span>
             </div>
             <div class="score-item">
                 <span class="score-label">impact</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">innovation</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">credibility</span>
                 <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
-                <span class="score-value">6</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">relevance</span>
-                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
-                <span class="score-value">10</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">practicality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">virality</span>
-                <div class="score-bar"><div class="score-fill" style="width: 50%"></div></div>
-                <span class="score-value">5</span>
-            </div>
-            <div class="score-item">
-                <span class="score-label">total</span>
-                <div class="score-bar"><div class="score-fill" style="width: 60.0%"></div></div>
-                <span class="score-value">6.0</span>
+                <span class="score-value">60</span>
             </div></div>
-            <div class="news-footer"><a href="#" target="_blank">查看原文 →</a></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849433.html" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="low">
+            <div class="news-header">
+                <div class="news-rank">#18</div>
+                <div class="news-title">SBTI爆火背后，年轻人为什么热衷界定自己？</div>
+                <div class="news-score" style="background: #6b7280">55.25分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
+            </div>
+            <div class="news-summary"></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70%"></div></div>
+                <span class="score-value">70</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 52.5%"></div></div>
+                <span class="score-value">52.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849430.html" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="low">
+            <div class="news-header">
+                <div class="news-rank">#19</div>
+                <div class="news-title">创造SBTI测试的女孩：谈了场必死的赛博恋爱，一个失去电子丈夫的老鼠人</div>
+                <div class="news-score" style="background: #6b7280">54.75分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
+            </div>
+            <div class="news-summary"></div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 65%"></div></div>
+                <span class="score-value">65</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 55.0%"></div></div>
+                <span class="score-value">55.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849431.html" target="_blank">查看原文 →</a></div>
+        </div>
+        <div class="news-card" data-score="low">
+            <div class="news-header">
+                <div class="news-rank">#20</div>
+                <div class="news-title">石油美元，大变天</div>
+                <div class="news-score" style="background: #6b7280">54.25分</div>
+            </div>
+            <div class="news-meta">
+                <span>📍 huxiu</span>
+                <span>🕐 2026-04-10</span>
+            </div>
+            <div class="news-summary">未来全球货币格局将加速多极化</div>
+            <div class="news-scores"><div class="scores-title">📊 七维评分</div>
+            <div class="score-item">
+                <span class="score-label">timeliness</span>
+                <div class="score-bar"><div class="score-fill" style="width: 100%"></div></div>
+                <span class="score-value">100</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">authority</span>
+                <div class="score-bar"><div class="score-fill" style="width: 70.0%"></div></div>
+                <span class="score-value">70.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">ai_relevance</span>
+                <div class="score-bar"><div class="score-fill" style="width: 0%"></div></div>
+                <span class="score-value">0.0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">content_quality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">position</span>
+                <div class="score-bar"><div class="score-fill" style="width: 57.5%"></div></div>
+                <span class="score-value">57.5</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">originality</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">impact</span>
+                <div class="score-bar"><div class="score-fill" style="width: 60%"></div></div>
+                <span class="score-value">60</span>
+            </div></div>
+            <div class="news-footer"><a class="news-link" href="https://www.huxiu.com/article/4849289.html" target="_blank">查看原文 →</a></div>
         </div>
 </div>
 <div class="sidebar">
 <div class="sidebar-card">
 <h3 class="sidebar-title">📊 评分分布</h3>
-<div class="distribution-item"><span>🟢 高分 (≥55)</span><strong style="color:#10b981;">0</strong></div>
-<div class="distribution-item"><span>🟡 中分 (45-54)</span><strong style="color:#f59e0b;">0</strong></div>
-<div class="distribution-item"><span>⚪ 低分 (&lt;45)</span><strong style="color:#6b7280;">0</strong></div>
+<div class="distribution-item"><span>🟢 高分 (≥80)</span><strong style="color:#10b981;">0</strong></div>
+<div class="distribution-item"><span>🟡 中分 (60-79)</span><strong style="color:#f59e0b;">11</strong></div>
+<div class="distribution-item"><span>⚪ 低分 (&lt;60)</span><strong style="color:#6b7280;">9</strong></div>
 </div>
 <div class="sidebar-card">
 <h3 class="sidebar-title">📡 采集源状态</h3>
@@ -1019,52 +1062,72 @@ body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-
             <div class="source-card">
                 <div class="source-name">openai-blog</div>
                 <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-meta">采集: 0 条 | 方法: -</div>
             </div>
             <div class="source-card">
-                <div class="source-name">google-ai-blog</div>
-                <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-name">Google AI Blog</div>
+                <div class="source-status" style="color: #ef4444">⚠ 失败</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_failed+browser_failed+search_failed+google_news_failed</div>
             </div>
             <div class="source-card">
-                <div class="source-name">deepmind-blog</div>
-                <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-name">DeepMind Blog</div>
+                <div class="source-status" style="color: #ef4444">⚠ 失败</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_failed+browser_failed+search_failed+google_news_failed</div>
             </div>
             <div class="source-card">
-                <div class="source-name">mit-tech-review</div>
-                <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-name">MIT Technology Review AI</div>
+                <div class="source-status" style="color: #ef4444">⚠ 失败</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_failed+browser_failed+search_failed+google_news_failed</div>
             </div>
             <div class="source-card">
                 <div class="source-name">venturebeat</div>
                 <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-meta">采集: 0 条 | 方法: -</div>
             </div>
             <div class="source-card">
-                <div class="source-name">36kr</div>
+                <div class="source-name">36氪快讯</div>
                 <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-meta">采集: 10 条 | 方法: rss</div>
             </div>
             <div class="source-card">
-                <div class="source-name">jiqizhixin</div>
-                <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-name">机器之心</div>
+                <div class="source-status" style="color: #ef4444">✗ 失效</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_failed+browser_skipped_disabled+search_skipped_disabled+google_news_failed</div>
             </div>
             <div class="source-card">
-                <div class="source-name">qbitai</div>
-                <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-name">量子位</div>
+                <div class="source-status" style="color: #ef4444">✗ 失效</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_failed+browser_skipped_disabled+search_skipped_disabled+google_news_failed</div>
             </div>
             <div class="source-card">
                 <div class="source-name">pingwest</div>
                 <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-meta">采集: 0 条 | 方法: -</div>
             </div>
             <div class="source-card">
                 <div class="source-name">leiphone</div>
                 <div class="source-status" style="color: #10b981">✓ 活跃</div>
-                <div class="source-meta">采集: 0 条</div>
+                <div class="source-meta">采集: 0 条 | 方法: -</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">OpenAI News</div>
+                <div class="source-status" style="color: #ef4444">✗ 失效</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">VentureBeat AI</div>
+                <div class="source-status" style="color: #ef4444">✗ 失效</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">Import AI</div>
+                <div class="source-status" style="color: #ef4444">✗ 失效</div>
+                <div class="source-meta">采集: 0 条 | 方法: rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed</div>
+            </div>
+            <div class="source-card">
+                <div class="source-name">虎嗅</div>
+                <div class="source-status" style="color: #10b981">✓ 活跃</div>
+                <div class="source-meta">采集: 10 条 | 方法: rss</div>
             </div>
 </div>
 </div>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 日报 - 2026年4月10日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header .date {
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-item .number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stat-item .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .source-status {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .source-status h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .source-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .source-item.success {
+            border-left: 3px solid #4caf50;
+        }
+        
+        .source-item.failed {
+            border-left: 3px solid #f44336;
+        }
+        
+        .source-name {
+            font-weight: 500;
+        }
+        
+        .source-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .source-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .score-badge {
+            background: #f0f0f0;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .news-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .news-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .news-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .news-link:hover {
+            color: #764ba2;
+        }
+        
+        .news-link::after {
+            content: ' →';
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📡 AI 日报</h1>
+            <div class="date">2026年4月10日 星期五</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="number">18</div>
+                    <div class="label">新闻总数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">4</div>
+                    <div class="label">成功源</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">6</div>
+                    <div class="label">失败源</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="source-status">
+            <h3>📊 采集源状态</h3>
+            <div class="source-grid">
+
+                <div class="source-item failed">
+                    <span class="source-name">OpenAI News</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">DeepMind Blog</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">Google AI Blog</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">MIT Technology Review AI</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">VentureBeat AI</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">Import AI</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item success">
+                    <span class="source-name">量子位</span>
+                    <span class="source-count">8 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">机器之心</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+                <div class="source-item success">
+                    <span class="source-name">36氪快讯</span>
+                    <span class="source-count">10 条</span>
+                </div>
+
+                <div class="source-item failed">
+                    <span class="source-name">虎嗅</span>
+                    <span class="source-count">0 条</span>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="news-grid">
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 69.0</span>
+                </div>
+                <h3 class="news-title">亚行上调韩国今年经济增长预期0.2个百分点至1.9%</h3>
+                <p class="news-description">亚洲开发银行（ADB）10日发布《2026年亚洲发展展望（4月版）》报告，上调韩国今年经济增长预期0.2个百分点至1.9%，明年增长预期也为1.9%。亚行上调预期的依据包括半导体业绩向好拉动出口增长，降息节奏放缓助推消费提振效果有望在今年释放，政府或扩大半导体、军工、生物等战略产业相关开支。亚行同时认为韩国经济还面临着不少不确定性，如中东冲突、美国关税政策等外部风险，以及人工智能（AI）需求难测、...</p>
+                <a href="https://www.36kr.com/newsflashes/3760716246434311" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 67.3</span>
+                </div>
+                <h3 class="news-title">上市前SpaceX业绩被曝光 受xAI拖累2025年亏损近50亿美元</h3>
+                <p class="news-description">据消息人士透露，即将于今年上市的太空探索技术公司（SpaceX）2025年的年度营收超过了185亿美元，但亏损将近50亿美元。这些财务数据实际上包括了马斯克旗下人工智能初创公司xAI的营收情况，因为SpaceX于今年2月份收购了该公司。SpaceX此前在芯片和数据中心方面投入了大量资金来支持xAI项目，使得该部门的资本支出接近130亿美元。（财联社）...</p>
+                <a href="https://www.36kr.com/newsflashes/3760737624064521" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 65.0</span>
+                </div>
+                <h3 class="news-title">LeCun点赞：国产开源模型占领硅谷，性价比超10倍</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398807.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 64.4</span>
+                </div>
+                <h3 class="news-title">证监会：意见出台更好支持科技创新和新质生产力发展的迫切需要</h3>
+                <p class="news-description">36氪获悉，中国证监会新闻发言人就《关于深化创业板改革更好服务新质生产力发展的意见》答记者问，其中提到，《创业板意见》出台是更好支持科技创新和新质生产力发展的迫切需要。当前新一轮科技革命和产业变革加速突破，人工智能等诸多领域呈现爆发式发展。新技术催生新产业、新业态，需要资本市场提供更高效更便捷的融资支持。进一步提升创业板制度包容性、适应性，有利于更好发挥创业板板块特色和优势，更大力度支持传统产业升...</p>
+                <a href="https://www.36kr.com/newsflashes/3760735169757703" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 64.2</span>
+                </div>
+                <h3 class="news-title">Claude神之bug：给自己下指令，还诬赖用户？？Hacker News炸了</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398385.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 63.6</span>
+                </div>
+                <h3 class="news-title">马斯克说漏嘴了！Claude Opus参数5T，Sonnet 1T</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398420.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 62.3</span>
+                </div>
+                <h3 class="news-title">大模型能“原地”改参数了！字节Seed&北大新论文：测试时推理无需加层重训练</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398741.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 62.2</span>
+                </div>
+                <h3 class="news-title">证监会：推出更多创业板相关ETF和期权，适时推出创业板股指期货</h3>
+                <p class="news-description">36氪获悉，中国证监会新闻发言人就《关于深化创业板改革更好服务新质生产力发展的意见》答记者问，其中提到，丰富产品服务体系。优化创业板相关指数编制，推出更多创业板相关ETF和期权，适时推出创业板股指期货，支持基金投顾配置创业板ETF，将创业板ETF纳入基金通平台转让，更好满足不同投资者资产配置和风险管理需求，提升投资便利度和吸引力。...</p>
+                <a href="https://www.36kr.com/newsflashes/3760735488033288" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 62.2</span>
+                </div>
+                <h3 class="news-title">生数科技完成近20 亿元 B 轮融资，以通用世界模型定义下一代数字与物理世界生产力底座</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398772.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 61.9</span>
+                </div>
+                <h3 class="news-title">太初元碁完成智谱GLM-5.1即发即适配</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398752.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 61.4</span>
+                </div>
+                <h3 class="news-title">证监会：进一步深化投资端改革，促进投融资协调发展</h3>
+                <p class="news-description">36氪获悉，中国证监会发布《关于深化创业板改革更好服务新质生产力发展的意见》，意见指出，在创业板引入做市商、大宗交易实时成交确认、ETF盘后固定价格交易等机制安排。允许基金投顾配置创业板ETF。优化创业板指数、ETF和期货期权品种体系。汇聚工作合力，共同营造良好市场发展生态。进一步发挥地方政府在企业培育、涉企服务、风险处置等方面的作用。加强与相关行业主管部门的沟通协作和信息共享。强化深交所科技成果...</p>
+                <a href="https://www.36kr.com/newsflashes/3760733544891141" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 61.2</span>
+                </div>
+                <h3 class="news-title">刷屏的SBTI，底层算法有点东西…</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398788.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 61.1</span>
+                </div>
+                <h3 class="news-title">证监会：完善融资并购制度，提升股债融资灵活性便利性</h3>
+                <p class="news-description">36氪获悉，中国证监会发布《关于深化创业板改革更好服务新质生产力发展的意见》，意见指出，完善融资并购制度，提升股债融资灵活性便利性。推出再融资储架发行制度。优化再融资简易程序。支持优质创新公司灵活设置股权激励考核指标。支持创业板公司发行科创债、绿色债券等产品。强化全过程监管，推动提高上市公司质量。加强新股发行定价监管。持续严防严处上市公司财务造假，强化穿透式监管，严惩欺诈发行、财务造假等违法违规行...</p>
+                <a href="https://www.36kr.com/newsflashes/3760732482306568" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 60.8</span>
+                </div>
+                <h3 class="news-title">证监会：进一步压实深交所审核主体责任 严把质量关</h3>
+                <p class="news-description">36氪获悉，中国证监会发布《关于深化创业板改革更好服务新质生产力发展的意见》，意见指出，严把发行上市遴选准入关，压紧压实审核注册全链条责任。进一步压实深交所审核主体责任，严把质量关。提高审核问询针对性。加强公权力制衡监督，进一步强化审核注册全流程廉政风险防控。...</p>
+                <a href="https://www.36kr.com/newsflashes/3760731103625728" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 60.6</span>
+                </div>
+                <h3 class="news-title">证监会：增设创业板第四套上市标准</h3>
+                <p class="news-description">36氪获悉，中国证监会发布《关于深化创业板改革更好服务新质生产力发展的意见》，意见指出，增设创业板第四套上市标准，为新兴产业和未来产业领域优质创新创业企业提供更好金融服务。建立IPO预先审阅机制。深化新股发行定价机制改革。积极发挥地方政府作用，助力提高审核注册效率。试点开展由地方政府向证监会和深交所推送拟在创业板发行上市企业信息，适用于已申请发行上市辅导备案、拟按照创业板第三套或第四套上市标准申报...</p>
+                <a href="https://www.36kr.com/newsflashes/3760730865074953" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 60.3</span>
+                </div>
+                <h3 class="news-title">证监会发布《关于深化创业板改革 更好服务新质生产力发展的意见》</h3>
+                <p class="news-description">36氪获悉，4月10日，经国务院同意，中国证监会发布《关于深化创业板改革 更好服务新质生产力发展的意见》（以下简称《创业板意见》）。这是中国证监会深入贯彻党的二十大和二十届历次全会精神，认真落实中央经济工作会议和《国务院关于加强监管防范风险推动资本市场高质量发展的若干意见》（国发〔2024〕10号）有关部署，提高资本市场制度包容性、适应性，健全投资和融资相协调的资本市场功能的重要举措，标志着新一轮...</p>
+                <a href="https://www.36kr.com/newsflashes/3760730425197064" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">量子位</span>
+                    <span class="score-badge">评分: 60.1</span>
+                </div>
+                <h3 class="news-title">这帮清华的，造了一个让龙虾“安全着陆”的新物种</h3>
+                <p class="news-description">...</p>
+                <a href="https://www.qbitai.com/2026/04/398750.html" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="source-badge">36氪快讯</span>
+                    <span class="score-badge">评分: 59.7</span>
+                </div>
+                <h3 class="news-title">证监会：深化创业板改革，更好支持企业利用资本市场融资发展、做优做强</h3>
+                <p class="news-description">36氪获悉，中国证监会新闻发言人就《关于深化创业板改革更好服务新质生产力发展的意见》答记者问，其中提到，《创业板意见》出台是更好服务实体经济高质量发展的重要举措。创业板主要服务成长型创新创业企业。深化创业板改革，更好支持企业利用资本市场融资发展、做优做强，有利于加快构建以先进制造业为骨干的现代化产业体系，助力推进新型工业化，促进地方经济和民营经济发展；也有利于推动大力提振消费，促进贸易提质增效，促...</p>
+                <a href="https://www.36kr.com/newsflashes/3760734175314689" target="_blank" class="news-link">阅读原文</a>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            <p>📡 AI 日报系统 - 新闻采集员自动采集</p>
+            <p class="timestamp">采集时间: 2026-04-10T16:28:03.117431+08:00</p>
+        </div>
+    </div>
+</body>
+</html>

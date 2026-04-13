@@ -1,34 +1,113 @@
 {
-  "last_collection": "2026-04-10T09:05:22.538715+08:00",
-  "total_news": 17,
-  "sources_active": 10,
-  "sources_failed": 0,
-  "avg_score": 7.37,
-  "top_news": [
-    {
-      "title": "OpenAI launches Codex plugin ecosystem for developers",
-      "source": "OpenAI Blog",
-      "score": 8.43
+  "lastUpdate": "2026-04-10T16:29:20.171199",
+  "today": {
+    "date": "2026-04-10",
+    "total": 18,
+    "successSources": 4,
+    "failedSources": 6,
+    "topNews": [
+      {
+        "title": "亚行上调韩国今年经济增长预期0.2个百分点至1.9%",
+        "source": "36氪快讯",
+        "score": 69.0,
+        "url": "https://www.36kr.com/newsflashes/3760716246434311"
+      },
+      {
+        "title": "上市前SpaceX业绩被曝光 受xAI拖累2025年亏损近50亿美元",
+        "source": "36氪快讯",
+        "score": 67.28,
+        "url": "https://www.36kr.com/newsflashes/3760737624064521"
+      },
+      {
+        "title": "LeCun点赞：国产开源模型占领硅谷，性价比超10倍",
+        "source": "量子位",
+        "score": 65.0,
+        "url": "https://www.qbitai.com/2026/04/398807.html"
+      },
+      {
+        "title": "证监会：意见出台更好支持科技创新和新质生产力发展的迫切需要",
+        "source": "36氪快讯",
+        "score": 64.44,
+        "url": "https://www.36kr.com/newsflashes/3760735169757703"
+      },
+      {
+        "title": "Claude神之bug：给自己下指令，还诬赖用户？？Hacker News炸了",
+        "source": "量子位",
+        "score": 64.19,
+        "url": "https://www.qbitai.com/2026/04/398385.html"
+      }
+    ]
+  },
+  "sources": {
+    "openai-news": {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "status": "disabled",
+      "method": "rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed",
+      "itemsCollected": 0
     },
-    {
-      "title": "Google Gemini API expands with new multimodal capabilities",
-      "source": "Google AI Blog",
-      "score": 8.43
+    "deepmind-blog": {
+      "id": "deepmind-blog",
+      "name": "DeepMind Blog",
+      "status": "disabled",
+      "method": "rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed",
+      "itemsCollected": 0
     },
-    {
-      "title": "DeepSeek V4拟4月上线，多模态能力实现重大突破",
-      "source": "机器之心",
-      "score": 8.29
+    "google-ai-blog": {
+      "id": "google-ai-blog",
+      "name": "Google AI Blog",
+      "status": "active",
+      "method": "rss_failed+browser_failed+search_failed+google_news_failed",
+      "itemsCollected": 0
     },
-    {
-      "title": "Claude Code更新引热议：思考深度下降67%",
-      "source": "量子位",
-      "score": 8.0
+    "mit-tech-review": {
+      "id": "mit-tech-review",
+      "name": "MIT Technology Review AI",
+      "status": "active",
+      "method": "rss_failed+browser_failed+search_failed+google_news_failed",
+      "itemsCollected": 0
     },
-    {
-      "title": "Google releases Gemma 4 open-source model optimized for advanced reasoning",
-      "source": "Google AI Blog",
-      "score": 7.86
+    "venturebeat-ai": {
+      "id": "venturebeat-ai",
+      "name": "VentureBeat AI",
+      "status": "disabled",
+      "method": "rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed",
+      "itemsCollected": 0
+    },
+    "import-ai": {
+      "id": "import-ai",
+      "name": "Import AI",
+      "status": "disabled",
+      "method": "rss_skipped_disabled+browser_skipped_disabled+search_skipped_disabled+google_news_failed",
+      "itemsCollected": 0
+    },
+    "qbitai": {
+      "id": "qbitai",
+      "name": "量子位",
+      "status": "active",
+      "method": "rss_failed+browser",
+      "itemsCollected": 8
+    },
+    "jiqizhixin": {
+      "id": "jiqizhixin",
+      "name": "机器之心",
+      "status": "disabled",
+      "method": "rss_failed+browser_failed+search_skipped_disabled+google_news_failed",
+      "itemsCollected": 0
+    },
+    "36kr": {
+      "id": "36kr",
+      "name": "36氪快讯",
+      "status": "active",
+      "method": "rss",
+      "itemsCollected": 10
+    },
+    "huxiu": {
+      "id": "huxiu",
+      "name": "虎嗅",
+      "status": "failed",
+      "method": "rss_failed+browser_failed+search_failed+google_news_failed",
+      "itemsCollected": 0
     }
-  ]
+  }
 }
